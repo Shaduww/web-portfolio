@@ -1,8 +1,16 @@
 export type Project = {
   title: string
+  slug: string
   description: string
   image: string
   tags: string[]
+  caseStudy?: {
+    overview?: string
+    challenge?: string
+    solution?: string
+    outcome?: string
+    role?: string
+  }
 }
 
 export type Experience = {
@@ -28,6 +36,7 @@ export const navLinks: NavLink[] = [
 export const projects: Project[] = [
   {
     title: "Neon Blueprint",
+    slug: "neon-blueprint",
     description:
       "Interactive design system that blends tactile layouts with live shader-driven atmospherics.",
     image:
@@ -36,6 +45,7 @@ export const projects: Project[] = [
   },
   {
     title: "Analog Futures",
+    slug: "analog-futures",
     description:
       "Micro-interactions for a global architecture studio, inspired by drafting tables and inked plans.",
     image:
@@ -44,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     title: "Digital Atelier",
+    slug: "digital-atelier",
     description:
       "A curated gallery for generative artists with responsive grids and editorial typography.",
     image:
@@ -52,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     title: "Pulse Desk",
+    slug: "pulse-desk",
     description:
       "Shader-backed workspace dashboard with live signals, alerts, and real-time collaboration cues.",
     image:
@@ -60,6 +72,7 @@ export const projects: Project[] = [
   },
   {
     title: "Ink & Orbit",
+    slug: "ink-and-orbit",
     description:
       "Storytelling microsite pairing serif-heavy headlines with playful orbital animations.",
     image:
@@ -68,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     title: "Canvas Relay",
+    slug: "canvas-relay",
     description:
       "High-touch portfolio relay with tactile cards, layered textures, and precise motion states.",
     image:

@@ -5,7 +5,7 @@ import { ExperienceSection } from "@/components/sections/experience-section";
 import { Header } from "@/components/sections/header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
-import { WorkGridSection } from "@/components/sections/work-grid-section";
+import { WorkGridSection } from "@/components/sections/projectsection";
 
 export default function Home() {
   return (

@@ -12,7 +12,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
-              Software Engineer
+              Developer
             </p>
             <p className="font-serif text-lg text-primary">Youssef Abdelhamid</p>
           </div>

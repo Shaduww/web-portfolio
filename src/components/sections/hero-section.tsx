@@ -5,7 +5,6 @@ import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ShaderAnimation } from "@/components/ui/shader-animation";
 
@@ -19,7 +18,7 @@ export function HeroSection() {
     <section className="relative w-full min-h-[75vh] md:min-h-[82vh] lg:min-h-[88vh] bg-[#FAF9F6]">
       <div className="pointer-events-none absolute inset-0">
         <div className="relative h-full w-full">
-          <ShaderAnimation intensity={0.80} speed={0.33} className="h-full w-full" />
+          <ShaderAnimation intensity={0.80} speed={0.50} className="h-full w-full" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-[#FAF9F6]/60 to-[#FAF9F6]" />
         </div>
       </div>
@@ -49,9 +48,29 @@ export function HeroSection() {
               variants={fadeUp}
               className="max-w-2xl text-balance text-lg leading-8 text-stone-700 drop-shadow-sm md:text-xl xl:max-w-3xl xl:text-[1.3rem] xl:leading-9"
             >
-              Hello! I'm Youssef, a Computer Science student specializing in iOS development. I build 
-              reliable mobile applications that feel clean and intuitive!
+              Hello! I'm Youssef, a Computer Science student specializing in iOS development. I enjoy building 
+              reliable mobile applications that feel clean and responsive.
             </motion.p>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+            >
+              <Button asChild size="lg" className="shadow-md">
+                <a href="#projects" className="flex items-center gap-2">
+                  View my projects <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                size="lg"
+                className="border border-primary/30 text-primary hover:bg-primary/10 hover:text-primary"
+              >
+                <a href="#about" className="flex items-center gap-2">
+                  About me 
+                </a>
+              </Button>
+            </motion.div>
             <motion.div
               variants={fadeUp}
               className="flex flex-wrap items-center justify-center gap-3"
@@ -84,21 +103,6 @@ export function HeroSection() {
                 >
                   <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
                   GitHub
-                </a>
-              </Button>
-            </motion.div>
-            <motion.div
-              variants={fadeUp}
-              className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
-            >
-              <Button asChild size="lg" className="shadow-md">
-                <a href="#contact" className="flex items-center gap-2">
-                  Book a project chat <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="ghost" size="lg" className="text-primary">
-                <a href="#projects" className="flex items-center gap-2">
-                  See recent projects <ArrowUpRight className="h-4 w-4" />
                 </a>
               </Button>
             </motion.div>

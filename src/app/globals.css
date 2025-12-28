@@ -85,6 +85,10 @@
   --sidebar-ring: #0ea5e9;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .dark {
   --font-sans: var(--font-sans-variable);
   --font-serif: var(--font-serif-variable);
