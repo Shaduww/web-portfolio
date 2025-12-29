@@ -9,14 +9,14 @@ import { WorkGridSection } from "@/components/sections/projectsection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex w-full min-h-screen flex-col gap-40 pb-16 pt-0">
         <HeroSection />
         <div className="mx-auto flex w-full max-w-screen-2xl flex-col gap-16 px-4 md:px-8 lg:px-12 xl:px-16">
           <AboutSection />
           <WorkGridSection />
-          <ExperienceSection />
+          {/* <ExperienceSection /> */} {/*un comment section when you need experience section back*/}
           <ContactSection />
         </div>
       </main>

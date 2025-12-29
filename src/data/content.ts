@@ -3,6 +3,8 @@ export type Project = {
   slug: string
   description: string
   image: string
+  gallery?: string[]
+  github?: string
   tags: string[]
   caseStudy?: {
     overview?: string
@@ -10,6 +12,10 @@ export type Project = {
     solution?: string
     outcome?: string
     role?: string
+    sections?: Array<{
+      title: string
+      body: string
+    }>
   }
 }
 
@@ -29,48 +35,42 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  /*{ label: "Experience", href: "#experience" },*/
   { label: "Contact", href: "#contact" },
 ]
 
 export const projects: Project[] = [
   {
-    title: "Neon Blueprint",
-    slug: "neon-blueprint",
+    title: "Momentum",
+    slug: "momentum",
     description:
-      "Interactive design system that blends tactile layouts with live shader-driven atmospherics.",
+      "Momentum is a iOS app for building consistent study habits through focused work sessions and insights.",
     image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
-    tags: ["Design Systems", "Three.js", "WebGL"],
+      "/project-assets/momentum-logo.png",
+    github: "https://github.com/imankamrann/Momentum",
+    gallery: [
+      "/project-assets/momentum-assets/chatbot1.png",
+      "/project-assets/momentum-assets/chatbot.png",
+      "/project-assets/momentum-assets/timer.png",
+      "/project-assets/momentum-assets/timerrunning.png",
+      "/project-assets/momentum-assets/analyticsmonth.png",
+      "/project-assets/momentum-assets/analyticsall.png",
+      "/project-assets/momentum-assets/profile.png",
+      "/project-assets/momentum-assets/Tasks.png",
+      
+    ],
+    tags: ["iOS", "Swift", "Productivity", "Capstone","WIP"],
+    caseStudy: {
+      
+      sections: [
+        {
+          title: "Overview",
+          body: "Momentum is a native iOS study habit and productivity app designed to help students build consistency and structure in their academic routines. The project addresses common challenges such as procrastination, lack of motivation, and ineffective time management by combining productivity tools, analytics, and intelligent support into a single experience. Rather than focusing on a single feature, Momentum is designed as a system that encourages habit formation through focused work sessions, task organization, performance insights, and motivational elements such as gamification and personalization.",
+        },
+      ],
+    },
   },
-  {
-    title: "Analog Futures",
-    slug: "analog-futures",
-    description:
-      "Micro-interactions for a global architecture studio, inspired by drafting tables and inked plans.",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
-    tags: ["UX Motion", "Framer Motion", "Prototyping"],
-  },
-  {
-    title: "Digital Atelier",
-    slug: "digital-atelier",
-    description:
-      "A curated gallery for generative artists with responsive grids and editorial typography.",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
-    tags: ["Responsive Grid", "Art Direction", "Performance"],
-  },
-  {
-    title: "Pulse Desk",
-    slug: "pulse-desk",
-    description:
-      "Shader-backed workspace dashboard with live signals, alerts, and real-time collaboration cues.",
-    image:
-      "https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1600&q=80",
-    tags: ["Dashboards", "Data Viz", "Accessibility"],
-  },
-  {
+  /*{
     title: "Ink & Orbit",
     slug: "ink-and-orbit",
     description:
@@ -78,6 +78,27 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1600&q=80",
     tags: ["Storytelling", "Animation", "Editorial"],
+    caseStudy: {
+      role: "Role, team, timeline.",
+      sections: [
+        {
+          title: "Overview",
+          body: "Add a concise overview for Ink & Orbit.",
+        },
+        {
+          title: "Challenge",
+          body: "Describe the main challenge and constraints.",
+        },
+        {
+          title: "Solution",
+          body: "Explain the system and interaction decisions.",
+        },
+        {
+          title: "Outcome",
+          body: "Summarize results, impact, or next steps.",
+        },
+      ],
+    },
   },
   {
     title: "Canvas Relay",
@@ -87,7 +108,28 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
     tags: ["Portfolio", "Interaction Design", "System Thinking"],
-  },
+    caseStudy: {
+      role: "Role, team, timeline.",
+      sections: [
+        {
+          title: "Overview",
+          body: "Add a concise overview for Canvas Relay.",
+        },
+        {
+          title: "Challenge",
+          body: "Describe the main challenge and constraints.",
+        },
+        {
+          title: "Solution",
+          body: "Explain the system and interaction decisions.",
+        },
+        {
+          title: "Outcome",
+          body: "Summarize results, impact, or next steps.",
+        },
+      ],
+    },
+  },*/
 ]
 
 export const experiences: Experience[] = [

@@ -1,10 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import type { Metadata } from "next";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/sections/header";
+import { ImageGallery } from "@/components/ui/image-gallery";
 import { projects } from "@/data/content";
 import { notFound } from "next/navigation";
 
@@ -37,7 +38,9 @@ const sections = [
     fallback:
       "Share outcomes, impact, or next steps. This is a good place for metrics or results.",
   },
-];
+] as const;
+
+type SectionKey = (typeof sections)[number]["key"];
 
 const findProject = (slug: string) => projects.find((project) => project.slug === slug);
 
@@ -67,81 +70,93 @@ export default async function ProjectPage({ params }: PageProps) {
     notFound();
   }
 
+  const gallery = project.gallery?.length
+    ? project.gallery
+    : project.image
+      ? [project.image]
+      : [];
+
+  const caseStudySections = project.caseStudy?.sections?.length
+    ? project.caseStudy.sections.map((section) => ({
+        title: section.title,
+        body: section.body,
+      }))
+    : sections.map((section) => ({
+        title: section.title,
+        body: project.caseStudy?.[section.key as SectionKey] || section.fallback,
+      }));
+
+  const isSingleSection = caseStudySections.length === 1;
+
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-foreground">
-      <div className="mx-auto w-full max-w-screen-2xl px-4 pb-16 pt-10 md:px-8 lg:px-12 xl:px-16">
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <div className="mx-auto w-full max-w-screen-2xl px-4 pb-16 pt-24 md:px-8 lg:px-12 xl:px-16">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 transition hover:text-primary"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-primary"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to projects
           </Link>
-          <Button asChild variant="ghost" className="text-primary">
-            <Link href="/#contact" className="flex items-center gap-2">
-              Start a project <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-
-        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
-              Case study
-            </p>
-            <h1 className="font-serif text-4xl text-primary md:text-5xl">
-              {project.title}
-            </h1>
-            <p className="text-lg leading-8 text-stone-700">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <Badge key={tag} variant="outline" className="bg-white/70">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-            {project.caseStudy?.role ? (
-              <div className="rounded-2xl border border-stone-200/80 bg-white/80 p-5 text-sm text-stone-700">
-                <span className="text-xs uppercase tracking-[0.22em] text-stone-500">
-                  Role
-                </span>
-                <p className="mt-2">{project.caseStudy.role}</p>
-              </div>
-            ) : null}
-          </div>
-
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-stone-200/80 bg-white/80 shadow-lg">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes="(min-width: 1280px) 520px, (min-width: 1024px) 480px, 100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          {sections.map((section) => {
-            const content = project.caseStudy?.[section.key as keyof NonNullable<
-              typeof project.caseStudy
-            >];
-            return (
-              <div
-                key={section.key}
-                className="rounded-2xl border border-stone-200/80 bg-white/80 p-6"
+          {project.github ? (
+            <Button asChild size="sm">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2"
               >
-                <h2 className="font-serif text-2xl text-primary">{section.title}</h2>
-                <p className="mt-3 text-base leading-7 text-stone-700">
-                  {content || section.fallback}
-                </p>
-              </div>
-            );
-          })}
+                <Github className="h-4 w-4" />
+                View on GitHub
+              </a>
+            </Button>
+          ) : null}
+        </div>
+
+        <div className="mt-8 space-y-5 text-center">
+          <h1 className="font-serif text-4xl text-primary md:text-5xl">
+            {project.title}
+          </h1>
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-muted-foreground">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {project.tags.map((tag) => (
+              <Badge key={tag} variant="outline" className="bg-card/70">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+          {project.caseStudy?.role ? (
+            <div className="mx-auto max-w-md rounded-2xl border border-border/70 bg-card/80 p-5 text-sm text-muted-foreground">
+              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                Role
+              </span>
+              <p className="mt-2">{project.caseStudy.role}</p>
+            </div>
+          ) : null}
+        </div>
+
+        <ImageGallery images={gallery} />
+
+        <div
+          className={`mx-auto mt-12 grid w-full gap-8 ${
+            isSingleSection ? "max-w-3xl" : "max-w-5xl lg:grid-cols-2"
+          }`}
+        >
+          {caseStudySections.map((section) => (
+            <div
+              key={section.title}
+              className="w-full rounded-2xl border border-border/70 bg-card/80 p-6"
+            >
+              <h2 className="font-serif text-2xl text-primary">{section.title}</h2>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">
+                {section.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

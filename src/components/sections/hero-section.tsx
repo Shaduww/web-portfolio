@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -15,11 +15,11 @@ const fadeUp = {
 
 export function HeroSection() {
   return (
-    <section className="relative w-full min-h-[75vh] md:min-h-[82vh] lg:min-h-[88vh] bg-[#FAF9F6]">
+    <section id="top" className="relative w-full min-h-[75vh] md:min-h-[82vh] lg:min-h-[88vh] bg-background">
       <div className="pointer-events-none absolute inset-0">
         <div className="relative h-full w-full">
           <ShaderAnimation intensity={0.80} speed={0.50} className="h-full w-full" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-[#FAF9F6]/60 to-[#FAF9F6]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
         </div>
       </div>
 
@@ -33,7 +33,7 @@ export function HeroSection() {
           >
             <motion.div
               variants={fadeUp}
-              className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-stone-600 shadow-sm backdrop-blur"
+              className="mt-10 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground shadow-sm backdrop-blur"
             >
               <MapPin className="h-4 w-4 text-outline" />
               Toronto, Ontario
@@ -46,7 +46,7 @@ export function HeroSection() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="max-w-2xl text-balance text-lg leading-8 text-stone-700 drop-shadow-sm md:text-xl xl:max-w-3xl xl:text-[1.3rem] xl:leading-9"
+              className="max-w-2xl text-balance text-lg leading-8 text-muted-foreground drop-shadow-sm dark:text-foreground md:text-xl xl:max-w-3xl xl:text-[1.3rem] xl:leading-9"
             >
               Hello! I'm Youssef, a Computer Science student specializing in iOS development. I enjoy building 
               reliable mobile applications that feel clean and responsive.
@@ -78,7 +78,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="ghost"
-                className="border border-primary/20 bg-white/60 text-primary hover:bg-primary/10 hover:text-primary"
+                className="border border-primary/20 bg-card/70 text-primary hover:bg-primary/10 hover:text-primary"
               >
                 <a
                   href="https://www.linkedin.com/in/youssef-abdelhamidd/"
@@ -93,7 +93,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="ghost"
-                className="border border-primary/20 bg-white/60 text-primary hover:bg-primary/10 hover:text-primary"
+                className="border border-primary/20 bg-card/70 text-primary hover:bg-primary/10 hover:text-primary"
               >
                 <a
                   href="https://github.com/shaduww"

@@ -16,7 +16,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="scroll-mt-24 space-y-6">
       <div>
-        <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Experience</p>
+        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Experience</p>
         <h2 className="font-serif text-3xl text-primary md:text-4xl">
           Craft refined with practice
         </h2>
@@ -26,7 +26,7 @@ export function ExperienceSection() {
         {experiences.map((item) => (
           <Card
             key={item.role}
-            className="border-stone-200/90 bg-white/90 shadow-sm"
+            className="border-border/80 bg-card/80 shadow-sm"
           >
             <CardHeader className="gap-2">
               <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
@@ -34,7 +34,7 @@ export function ExperienceSection() {
                   <CardTitle className="font-serif text-2xl text-primary">
                     {item.role}
                   </CardTitle>
-                  <CardDescription className="text-base text-stone-700">
+                  <CardDescription className="text-base text-muted-foreground">
                     {item.company}
                   </CardDescription>
                 </div>
@@ -42,12 +42,12 @@ export function ExperienceSection() {
                   {item.timeframe}
                 </Badge>
               </div>
-              <CardDescription className="text-stone-700">
+              <CardDescription className="text-muted-foreground">
                 {item.summary}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="grid gap-3 text-sm text-stone-700 md:grid-cols-2">
+              <ul className="grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
                 {item.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-start gap-2">
                     <ArrowRight className="mt-0.5 h-4 w-4 text-primary" />

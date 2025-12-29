@@ -13,25 +13,25 @@ export function WorkGridSection() {
     <section id="projects" className="scroll-mt-24 space-y-6">
       <div className="flex flex-col gap-3 text-center">
         <div>
-          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
-            Projects
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            Projects and Works
           </p>
           <h2 className="font-serif text-3xl text-primary md:text-4xl">
-            Selected projects
+            Project Showcase
           </h2>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-6">
         {projects.map((project, index) => (
           <Link
             key={project.title}
             href={`/projects/${project.slug}`}
-            className="group block"
+            className="group block w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)]"
             aria-label={`View ${project.title} case study`}
           >
-            <Card className="border-stone-200/90 bg-white/80 shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-stone-200/80">
+            <Card className="border-border/80 bg-card/80 shadow-sm transition group-hover:-translate-y-1 group-hover:shadow-lg">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border/70">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -47,12 +47,12 @@ export function WorkGridSection() {
                   {project.title}
                   <ArrowUpRight className="h-4 w-4 text-primary/70 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </CardTitle>
-                <CardDescription className="text-base text-stone-700">
+                <CardDescription className="text-base text-muted-foreground">
                   {project.description}
                 </CardDescription>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="bg-white/70">
+                    <Badge key={tag} variant="outline" className="bg-card/70">
                       {tag}
                     </Badge>
                   ))}

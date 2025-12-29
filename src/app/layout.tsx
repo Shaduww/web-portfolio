@@ -5,6 +5,7 @@ import {
   Work_Sans,
 } from "next/font/google";
 import "./globals.css";
+import { MobileNav } from "@/components/sections/mobile-nav";
 
 const serif = Playfair_Display({
   subsets: ["latin"],
@@ -36,11 +37,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(() => {
+  try {
+    const theme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const shouldDark = theme === "dark" || (theme !== "light" && prefersDark);
+    document.documentElement.classList.toggle("dark", shouldDark);
+  } catch (error) {
+    // No-op: fall back to default theme.
+  }
+})();
+`,
+          }}
+        />
+      </head>
       <body
         className={`${serif.variable} ${sans.variable} ${mono.variable} antialiased bg-background text-foreground`}
       >
         {children}
+        <MobileNav />
       </body>
     </html>
   );
