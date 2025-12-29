@@ -33,7 +33,7 @@ export function HeroSection() {
           >
             <motion.div
               variants={fadeUp}
-              className="mt-10 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground shadow-sm backdrop-blur"
+              className="mt-10 inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground shadow-sm backdrop-blur dark:text-foreground"
             >
               <MapPin className="h-4 w-4 text-outline" />
               Toronto, Ontario
