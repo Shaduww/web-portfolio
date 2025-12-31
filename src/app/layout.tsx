@@ -26,9 +26,9 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Youssef Abdelhamid | Creative Engineer Portfolio",
+  title: "Youssef Abdelhamid | Mobile Engineer Portfolio",
   description:
-    "A paper-and-ink inspired portfolio with a digital shader pulse showcasing work, experience, and ways to collaborate.",
+    "Mobile Applicaitons Developer and Computer Science Student",
 };
 
 export default function RootLayout({
