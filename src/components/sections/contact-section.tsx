@@ -93,7 +93,7 @@ export function ContactSection() {
                 name="message"
                 required
                 rows={4}
-                placeholder="Tell me about your project..."
+                placeholder="Would love to hear from you.."
                 className="mt-2 w-full resize-none rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/70 placeholder:opacity-100 focus:outline-none focus:ring-2 focus:ring-primary-foreground/50 focus:placeholder:opacity-0 dark:border-white/20 dark:bg-white/10 dark:text-foreground dark:placeholder:text-muted-foreground"
               />
             </label>
@@ -108,7 +108,7 @@ export function ContactSection() {
             </Button>
             {formState === "success" ? (
               <p className="text-sm text-primary-foreground/90 dark:text-foreground">
-                Message sent! I&apos;ll get back to you soon.
+                Message sent! I&apos;ll get back to you soon!
               </p>
             ) : null}
             {formState === "error" ? (

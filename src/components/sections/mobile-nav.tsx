@@ -131,11 +131,11 @@ export function MobileNav() {
     >
       <div
         ref={containerRef}
-        className="relative flex items-center gap-4 rounded-full border border-border/30 bg-background/30 px-5 py-2 text-xs font-medium text-foreground shadow-xl backdrop-blur-xs"
+        className="relative flex items-center gap-5 rounded-full border border-border/30 bg-background/30 px-6 py-3 text-sm font-medium text-foreground shadow-xl backdrop-blur-xs"
       >
         <span
           aria-hidden="true"
-          className="absolute left-0 top-1/2 h-7 -translate-y-1/2 rounded-full bg-primary/10 transition-[transform,width,opacity] duration-300 ease-out"
+          className="absolute left-0 top-1/2 h-9 -translate-y-1/2 rounded-full bg-primary/10 transition-[transform,width,opacity] duration-300 ease-out"
           style={indicatorStyle}
         />
         {links.map((link) => (

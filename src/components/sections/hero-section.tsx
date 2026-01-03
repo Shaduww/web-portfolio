@@ -78,7 +78,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="ghost"
-                className="border border-primary/20 bg-card/70 text-primary hover:bg-primary/10 hover:text-primary"
+                className="border border-primary/20 bg-transparent text-primary hover:bg-primary/10 hover:text-primary"
               >
                 <a
                   href="https://www.linkedin.com/in/youssef-abdelhamidd/"
@@ -93,7 +93,7 @@ export function HeroSection() {
               <Button
                 asChild
                 variant="ghost"
-                className="border border-primary/20 bg-card/70 text-primary hover:bg-primary/10 hover:text-primary"
+                className="border border-primary/20 bg-transparent text-primary hover:bg-primary/10 hover:text-primary"
               >
                 <a
                   href="https://github.com/shaduww"
