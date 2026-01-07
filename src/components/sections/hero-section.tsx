@@ -15,7 +15,7 @@ const fadeUp = {
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative w-full min-h-[75vh] md:min-h-[82vh] lg:min-h-[88vh] bg-background">
+    <section id="top" className="relative w-full min-h-[100svh] bg-background">
       <div className="pointer-events-none absolute inset-0">
         <div className="relative h-full w-full">
           <ShaderAnimation intensity={0.80} speed={0.50} className="h-full w-full" />
