@@ -18,7 +18,7 @@ export function HeroSection() {
     <section id="top" className="relative w-full min-h-[100svh] bg-background">
       <div className="pointer-events-none absolute inset-0">
         <div className="relative h-full w-full">
-          <ShaderAnimation intensity={0.80} speed={0.50} className="h-full w-full" />
+          <ShaderAnimation intensity={0.80} speed={0.30} className="h-full w-full" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background" />
         </div>
       </div>
@@ -62,7 +62,7 @@ export function HeroSection() {
               </Button>
               <Button
                 asChild
-                variant="ghost"
+                variant="outline"
                 size="lg"
                 className="border border-primary/30 text-primary hover:bg-primary/10 hover:text-primary"
               >

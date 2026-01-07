@@ -53,7 +53,7 @@ const fragmentShader = `
     // Two ripple sources for layered pulses
     float ripplePrimary = rippleAt(uv, vec2(0.0, 0.0), 12.0, 1.2);
     float rippleOffset = rippleAt(uv, vec2(0.28, 0.16), 11.0, 1.05);
-    float ripple = (ripplePrimary * 0.65 + rippleOffset * 0.55) * uIntensity;
+    float ripple = (ripplePrimary * 0.75 + rippleOffset * 0.65) * uIntensity;
 
     float pulse = 0.5 + 0.5 * sin(uTime * 0.5);
     float flux = wave * 0.25 + ripple * 0.65 + pulse * 0.2;

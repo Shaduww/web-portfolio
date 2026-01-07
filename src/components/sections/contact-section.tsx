@@ -46,8 +46,6 @@ export function ContactSection() {
       id="contact"
       className="relative overflow-hidden border border-primary/10 bg-primary text-primary-foreground shadow-lg md:rounded-[28px] dark:border-border/70 dark:bg-card dark:text-foreground"
     >
-
-
       <div className="relative z-10 flex flex-col gap-10 p-8 md:p-12 lg:p-14 xl:p-16">
         <div className="mx-auto max-w-2xl space-y-3 text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-primary-foreground/80 dark:text-foreground">
